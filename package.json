@@ -1,0 +1,38 @@
+{
+  "name": "@patternson/universal-web-components-to-react",
+  "version": "0.1.0",
+  "description": "create universal/hydratable react wrapper for custom elements / web components",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:patternsonio/universal-web-components-to-react.git"
+  },
+  "keywords": [
+    "react",
+    "web-components",
+    "custom-elements",
+    "reactjs",
+    "wrapper",
+    "server side rendering",
+    "universal",
+    "hydration",
+    "ssr"
+  ],
+  "author": "patternson.io, Hannes Diercks <moin@patternson.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patternsonio/universal-web-components-to-react/issues"
+  },
+  "homepage": "https://github.com/patternsonio/universal-web-components-to-react#readme",
+  "devDependencies": {
+    "eslint": "4.19.1",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-import": "2.12.0",
+    "eslint-plugin-prettier": "2.6.0",
+    "prettier": "1.13.5"
+  }
+}
