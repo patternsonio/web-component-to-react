@@ -6,6 +6,7 @@
   "browser": "browser",
   "scripts": {
     "test": "jest",
+    "prepare": "npm run build",
     "build": "babel src -d lib",
     "lint": "eslint --ext js,jsx ."
   },
