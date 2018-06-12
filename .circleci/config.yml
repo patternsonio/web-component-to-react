@@ -1,6 +1,6 @@
 defaults: &defaults
   docker:
-    - image: cypress/base:8
+    - image: cypress/base:10
   working_directory: ~/web-components-to-react
 
 version: 2
