@@ -1,0 +1,9 @@
+{
+  "extends": "../.eslintrc",
+  "globals": {
+    "context": true,
+    "beforeEach": true,
+    "cy": true,
+    "it": true
+  }
+}

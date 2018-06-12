@@ -1,8 +1,6 @@
 {
-  "extends": ["airbnb-base", "plugin:prettier/recommended"],
-  "parserOptions": {
-    "sourceType": "script"
-  },
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "plugin:prettier/recommended"],
   "rules": {
     "arrow-body-style": 0
   }

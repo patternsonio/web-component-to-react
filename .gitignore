@@ -2,3 +2,7 @@ coverage/
 node_modules/
 npm-debug.log
 .DS_Store
+demo/.next
+demo/src/components.d.ts
+demo/static
+lib/
