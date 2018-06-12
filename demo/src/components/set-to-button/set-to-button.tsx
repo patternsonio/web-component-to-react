@@ -5,14 +5,14 @@ import { Component, Event, EventEmitter } from '@stencil/core';
 })
 export class SetToButton {
   @Event() setTo: EventEmitter;
-  @Prop() target: any;
+  @Prop() targetValue: any;
   emitSetTo = () => {
-    this.setTo.emit(this.target);
+    this.setTo.emit(this.targetValue);
   };
   render() {
     return (
       <button onClick={this.emitSetTo}>
-        <slot /> {this.target}
+        <slot /> {this.targetValue}
       </button>
     );
   }

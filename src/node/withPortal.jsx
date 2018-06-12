@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DEFAULT_PORTAL_ELM } from '../common/constants';
-import asCustomElement from './asCustomElement';
 
-export default function toReact(
+export default function withPortal(
   WebComponent,
-  { Portal = DEFAULT_PORTAL_ELM, toEventHandlerName, toAttributeName } = {},
+  { Portal = DEFAULT_PORTAL_ELM } = {},
 ) {
   const Wrapper = (props) => {
     return (
@@ -22,8 +21,5 @@ export default function toReact(
     children: null,
   };
 
-  return asCustomElement(Wrapper, {
-    toEventHandlerName,
-    toAttributeName,
-  });
+  return Wrapper;
 }

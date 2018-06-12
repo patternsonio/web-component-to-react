@@ -14,10 +14,11 @@ export default function asCustomElement(
   const Wrapper = (props) => {
     return (
       <WrappedComponent
-        {...toAttributeName(
+        {...filterMapProps(
           filterMapProps(props, (key, value) => {
             return !toEventHandlerName(key, value) && key;
           }),
+          toAttributeName,
         )}
       >
         {props.children}

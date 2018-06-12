@@ -9,10 +9,10 @@ function ChangingButtons({ count, setTo }) {
   return (
     <Fragment>
       <div data-test="counter-count">{count}</div>
-      <Button onSetTo={setTo} target={count + 1}>
+      <Button onSetTo={setTo} targetValue={count + 1}>
         set to
       </Button>
-      <Button onSetTo={setTo} target={count - 1}>
+      <Button onSetTo={setTo} targetValue={count - 1}>
         set to
       </Button>
     </Fragment>

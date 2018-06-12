@@ -1,6 +1,6 @@
 context('React Counter', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/counter-changin-prop-buttons');
+    cy.visit('http://localhost:3000/counter-changing-prop-buttons');
   });
 
   it('works the counter', () => {

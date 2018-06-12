@@ -54,6 +54,7 @@
     "react-dom": "16.4.0"
   },
   "dependencies": {
+    "lodash.kebabcase": "^4.1.1",
     "memoize-one": "^3.1.1"
   }
 }
