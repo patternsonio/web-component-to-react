@@ -1,5 +1,5 @@
 {
-  "name": "@patternson/universal-web-components-to-react",
+  "name": "web-component-to-react",
   "version": "0.1.0",
   "description": "create universal/hydratable react wrapper for custom elements / web components",
   "main": "lib/node",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:patternsonio/universal-web-components-to-react.git"
+    "url": "git+ssh://git@github.com:patternsonio/web-component-to-react.git"
   },
   "keywords": [
     "react",
@@ -26,9 +26,9 @@
   "author": "patternson.io, Hannes Diercks <moin@patternson.io>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/patternsonio/universal-web-components-to-react/issues"
+    "url": "https://github.com/patternsonio/web-component-to-react/issues"
   },
-  "homepage": "https://github.com/patternsonio/universal-web-components-to-react#readme",
+  "homepage": "https://github.com/patternsonio/web-component-to-react#readme",
   "peerDependencies": {
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
