@@ -1,5 +1,7 @@
 # web-component-to-react
 
+[![CircleCI](https://circleci.com/gh/patternsonio/web-component-to-react/tree/master.svg?style=shield)](https://circleci.com/gh/patternsonio/web-component-to-react/tree/master)
+
 create universal and hydratable react wrapper for custom-elements/web-components
 
 ## install
