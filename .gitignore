@@ -6,3 +6,5 @@ demo/.next
 demo/src/components.d.ts
 demo/static
 lib/
+cypress/screenshots
+cypress/videos
