@@ -1,12 +1,4 @@
-import React, { Fragment } from 'react';
 import withCounterState from '../components/withCounterState';
+import Counter from '../components/Counter';
 
-export default withCounterState(({ count, increase, decrease }) => {
-  return (
-    <Fragment>
-      <div data-test="counter-count">{count}</div>
-      <button onClick={increase}>increase</button>
-      <button onClick={decrease}>decrease</button>
-    </Fragment>
-  );
-});
+export default withCounterState(Counter);

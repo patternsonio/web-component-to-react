@@ -1,12 +1,8 @@
-import React, { Fragment } from 'react';
-import toReact from '../../src/toReact';
+import React from 'react';
+import { asCustomElement } from '../..';
 
-const Button = toReact('s-button');
+const Button = asCustomElement('s-button');
 
 export default function Index() {
-  return (
-    <Button onClick={() => console.log('hello2')}>
-      <span>Hello</span>
-    </Button>
-  );
+  return <Button onCustomClick={() => console.log('hello2')}>Hello</Button>;
 }

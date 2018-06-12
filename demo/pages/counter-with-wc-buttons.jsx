@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import withCounterState from '../components/withCounterState';
-import toReact from '../../src/toReact';
+import toReact from '../..';
 
 const Button = toReact('s-button');
 

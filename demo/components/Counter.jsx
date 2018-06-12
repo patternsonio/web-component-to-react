@@ -1,6 +1,13 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
+export const CounterProps = {
+  count: PropTypes.number.isRequired,
+  increase: PropTypes.func.isRequired,
+  decrease: PropTypes.func.isRequired,
+  setTo: PropTypes.func.isRequired,
+};
+
 export default function Counter({ count, increase, decrease }) {
   return (
     <Fragment>
@@ -11,8 +18,4 @@ export default function Counter({ count, increase, decrease }) {
   );
 }
 
-Counter.propTypes = {
-  count: PropTypes.number.isRequired,
-  increase: PropTypes.func.isRequired,
-  decrease: PropTypes.func.isRequired,
-};
+Counter.propTypes = CounterProps;
