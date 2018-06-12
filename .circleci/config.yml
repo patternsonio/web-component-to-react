@@ -17,7 +17,7 @@ jobs:
           - v1-dependencies-{{ checksum ".package-lock-sum" }}
       - run:
           name: Install
-          command: npm install
+          command: CYPRESS_INSTALL_BINARY=0 npm install
       - save_cache:
           paths:
             - node_modules
@@ -41,6 +41,9 @@ jobs:
       - restore_cache:
           keys:
           - v1-repo-{{ .Revision }}
+      - run:
+          name: Install Cypress
+          command: $(npm bin)/cypress install
       - run:
           name: Test
           command: $(npm bin)/cypress run --browser=chrome
