@@ -72,7 +72,7 @@ function Cmp({ children, eventHandler }) {
 ### entries
 
 This packages exposes a `main` and a `browser` field in it's `package.json`.
-[webpack](https://webpack.js.org/) or [another modern bundler](https://duckduckgo.com/?q=webpack+alternatives) will use them automatically.
+[webpack](https://webpack.js.org/) and [other modern bundlers](https://duckduckgo.com/?q=webpack+alternatives) will use them automatically.
 
 If you use custom tooling, be sure to use `web-component-to-react/server` and
 `web-component-to-react/browser` in the respective environments.
