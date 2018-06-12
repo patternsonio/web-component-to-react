@@ -38,18 +38,34 @@ jobs:
       - run:
           name: Lint
           command: npm run lint
-  test:
+  buildDemo:
     <<: *defaults
     steps:
       - restore_cache:
           keys:
           - v1-repo-{{ .Revision }}
       - run:
+          name: Build stencil
+          command: $(npm bin)/stencil build
+      - save_cache:
+          paths:
+            - demo/static
+          key: v1-demo-build-{{ .Revision }}
+  test:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          keys:
+          - v1-repo-{{ .Revision }}
+      - restore_cache:
+          keys:
+          - v1-demo-build-{{ .Revision }}
+      - run:
           name: Install Cypress
           command: $(npm bin)/cypress install
       - run:
           name: Test
-          command: $(npm bin)/cypress run --browser=chrome
+          command: ./scripts/runCypressCi.sh
 
 workflows:
   version: 2
@@ -59,6 +75,9 @@ workflows:
       - lint:
           requires:
             - install
-      - test:
+      - buildDemo:
           requires:
             - install
+      - test:
+          requires:
+            - buildDemo
