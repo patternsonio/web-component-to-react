@@ -65,7 +65,7 @@ jobs:
           command: $(npm bin)/cypress install
       - run:
           name: Test
-          command: ./scripts/runCypressCi.sh
+          command: ./scripts/runCypressCi.sh --browser=chrome
 
 workflows:
   version: 2
