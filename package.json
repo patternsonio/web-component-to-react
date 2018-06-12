@@ -2,8 +2,8 @@
   "name": "web-component-to-react",
   "version": "0.1.0",
   "description": "create universal/hydratable react wrapper for custom elements / web components",
-  "main": "lib/node",
-  "browser": "lib/browser",
+  "main": "server",
+  "browser": "browser",
   "scripts": {
     "test": "jest",
     "build": "babel src -d lib"
