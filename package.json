@@ -1,6 +1,6 @@
 {
   "name": "web-component-to-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "create universal and hydratable react wrapper for custom-elements/web-components",
   "main": "server",
   "browser": "browser",
