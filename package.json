@@ -6,7 +6,8 @@
   "browser": "browser",
   "scripts": {
     "test": "jest",
-    "build": "babel src -d lib"
+    "build": "babel src -d lib",
+    "lint": "eslint --ext js,jsx ."
   },
   "repository": {
     "type": "git",
