@@ -1,0 +1,58 @@
+defaults: &defaults
+  docker:
+    - image: circleci/node:9
+  working_directory: ~/web-components-to-react
+
+version: 2
+jobs:
+  install:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Create package-lock.json checksum
+          command: sha256sum package-lock.json > .package-lock-sum
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum ".package-lock-sum" }}
+      - run:
+          name: Install
+          command: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum ".package-lock-sum" }}
+      - save_cache:
+          paths:
+            - ~/web-components-to-react
+          key: v1-repo-{{ .Revision }}
+  lint:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          keys:
+          - v1-repo-{{ .Revision }}
+      - run:
+          name: Lint
+          command: npm run lint
+  test:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          keys:
+          - v1-repo-{{ .Revision }}
+      - run:
+          name: Test
+          command: $(npm bin)/cypress run --browser=chrome
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - install
+      - lint:
+          requires:
+            - install
+      - test:
+          requires:
+            - install
