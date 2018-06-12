@@ -1,6 +1,5 @@
 const { createServer } = require('http');
 const path = require('path');
-const { parse } = require('url');
 const next = require('next');
 const { Renderer, loadConfig } = require('@stencil/core/server');
 const { config } = require('../stencil.config');
@@ -10,8 +9,8 @@ const app = next({
   dev: true,
   dir: __dirname,
   conf: {
-    webpack: (config) => {
-      config.module.rules
+    webpack: (c) => {
+      c.module.rules
         .filter(
           ({ test, loader }) =>
             test.test('.jsx') && loader !== 'hot-self-accept-loader',
@@ -20,7 +19,7 @@ const app = next({
           rule.include.push(path.resolve(__dirname, '..', 'src'));
         });
 
-      return config;
+      return c;
     },
   },
 });

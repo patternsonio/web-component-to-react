@@ -5,6 +5,7 @@ export const CounterProps = {
   count: PropTypes.number.isRequired,
   increase: PropTypes.func.isRequired,
   decrease: PropTypes.func.isRequired,
+  // eslint-disable-next-line react/no-unused-prop-types
   setTo: PropTypes.func.isRequired,
 };
 
