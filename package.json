@@ -1,6 +1,6 @@
 {
   "name": "web-component-to-react",
-  "version": "0.1.1",
+  "version": "0.0.0-development",
   "description": "create universal and hydratable react wrapper for custom-elements/web-components",
   "main": "server",
   "browser": "browser",
@@ -9,7 +9,8 @@
     "start": "node demo/server.js",
     "prepare": "npm run build",
     "build": "babel src -d lib",
-    "lint": "eslint --ext js,jsx ."
+    "lint": "eslint --ext js,jsx .",
+    "release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -54,7 +55,8 @@
     "prettier": "1.13.5",
     "prop-types": "15.6.1",
     "react": "16.4.0",
-    "react-dom": "16.4.0"
+    "react-dom": "16.4.0",
+    "semantic-release": "^15.5.2"
   },
   "dependencies": {
     "lodash.kebabcase": "^4.1.1",

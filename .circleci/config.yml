@@ -63,6 +63,15 @@ jobs:
       - run:
           name: Test
           command: ./scripts/runCypressCi.sh --browser=chrome
+  release:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          keys:
+          - v1-repo-{{ .Revision }}
+      - run:
+          name: Release
+          command: npm run release || true
 
 workflows:
   version: 2
@@ -78,3 +87,7 @@ workflows:
       - test:
           requires:
             - buildDemo
+      - release:
+          requires:
+            - test
+            - lint
