@@ -42,8 +42,8 @@ jobs:
           keys:
           - v1-repo-{{ .Revision }}
       - run:
-          name: Build stencil
-          command: $(npm bin)/stencil build
+          name: Build demo
+          command: npm run build:demo
       - save_cache:
           paths:
             - demo/static

@@ -9,6 +9,7 @@
     "start": "node demo/server.js",
     "prepare": "npm run build",
     "build": "babel src -d lib",
+    "build:demo": "stencil build",
     "lint": "eslint --ext js,jsx .",
     "release": "semantic-release"
   },
