@@ -60,10 +60,17 @@ export default function toReact(
           };
         }
       }
+      state = {};
       getRef = () => {
         return this.props.forwardedRef || this.ref;
       };
-      ref = createRef();
+      setRef = (ref) => {
+        this.getRef().current = ref;
+
+        this.setState({
+          portal: this.findPortal(ref),
+        });
+      };
       findPortal = memorizeOne((ref) => {
         const portal = ref.querySelector(Portal);
 
@@ -73,14 +80,14 @@ export default function toReact(
 
         return portal;
       });
+      ref = createRef();
       render() {
         const { children, ...rest } = this.props.hostProps;
 
         return (
           <Fragment>
-            {this.getRef().current &&
-              createPortal(children, this.findPortal(this.getRef().current))}
-            <WebComponent {...rest} ref={this.getRef()} {...this.wcProps} />
+            {this.state.portal && createPortal(children, this.state.portal)}
+            <WebComponent {...rest} ref={this.setRef} {...this.wcProps} />
           </Fragment>
         );
       }
