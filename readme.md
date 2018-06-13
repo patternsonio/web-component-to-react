@@ -43,7 +43,7 @@ But as of now there are still some bumps in the road.
 >
 > _[react docs on web-components](https://reactjs.org/docs/web-components.html)_
 
-Given we have a web-component `my-web-component`
+Given we have a web-component `my-web-component`  
 Then the following code will cause multiple problems
 
 ```jsx
